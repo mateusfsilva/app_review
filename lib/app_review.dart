@@ -116,7 +116,6 @@ class AppReview {
     if (compose) {
       final id = appId ?? (await getIosAppId()) ?? '';
       final reviewUrl = 'itunes.apple.com/app/id$id?mt=8&action=write-review';
-
       final uri = Uri.parse('itms-apps://$reviewUrl');
       if (await canLaunchUrl(uri)) {
         debugPrint('launching store page');
@@ -147,10 +146,8 @@ class AppReview {
     final appId = await getIosAppId() ?? '';
 
     if (appId.isNotEmpty) {
-      launchUrl(
-        Uri.parse('https://itunes.apple.com/app/id$appId'),
-        mode: LaunchMode.externalApplication,
-      );
+      launchUrl(Uri.parse('https://itunes.apple.com/app/id$appId'),
+          mode: LaunchMode.externalApplication);
       return 'Launched App Store';
     }
 
@@ -166,7 +163,6 @@ class AppReview {
   static Future<String> openGooglePlay({String? fallbackUrl}) async {
     final bundle = await getBundleName() ?? '';
     final markerUrl = 'market://details?id=$bundle';
-
     final uri = Uri.parse(markerUrl);
     if (await canLaunchUrl(uri)) {
       debugPrint('launching store page');
@@ -180,8 +176,7 @@ class AppReview {
     }
 
     launchUrl(
-      Uri.parse('https://play.google.com/store/apps/details?id=$bundle'),
-    );
+        Uri.parse('https://play.google.com/store/apps/details?id=$bundle'));
     return 'Launched Google Play: $bundle';
   }
 

@@ -1,6 +1,6 @@
 name: app_review
 description: Request and Write Reviews and Open Store Listing for Android and iOS in Flutter.
-version: 2.2.0
+version: 2.2.1
 maintainer: Rody Davis (@rodydavis)
 homepage: https://github.com/rodydavis/plugins
 repository: https://github.com/fluttercommunity/app_review
@@ -11,8 +11,8 @@ environment:
 
 dependencies:
   http: ^0.13.5
-  package_info_plus: ^3.0.0
-  url_launcher: ^6.1.6
+  package_info_plus: ^3.0.2
+  url_launcher: ^6.1.8
   flutter:
     sdk: flutter
 
